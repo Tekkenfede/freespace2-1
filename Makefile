@@ -24,10 +24,10 @@ LDFLAGS=$(shell sdl-config --libs) -lopenal
 CFLAGS=-g -DPLAT_UNIX $(shell sdl-config --cflags) -Iinclude/ # -fwritable-strings -Wall 
 CFLAGS+=-fsigned-char -Wno-format-y2k
 ifeq ($(strip $(PANDORA)),true)
-	CFLAGS+=-ffast-math -pipe -mcpu=cortex-a8 -mfpu=neon -ftree-vectorize -mfloat-abi=softfp -fsingle-precision-constant -mno-unaligned-access -fpermissive
+	CFLAGS+=-ffast-math -pipe -ftree-vectorize -fsingle-precision-constant -fpermissive
 endif
 ifeq ($(strip $(ODROID)),true)
-        CFLAGS+=-ffast-math -pipe -ftree-vectorize -fsingle-precision-constant -mno-unaligned-access -fpermissive
+        CFLAGS+=-ffast-math -pipe -ftree-vectorize -fsingle-precision-constant -fpermissive
 endif
 
 ifeq ($(strip $(DEBUG)),false)
