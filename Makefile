@@ -27,7 +27,7 @@ ifeq ($(strip $(PANDORA)),true)
 	CFLAGS+=-ffast-math -pipe -mcpu=cortex-a8 -mfpu=neon -ftree-vectorize -mfloat-abi=softfp -fsingle-precision-constant -mno-unaligned-access -fpermissive
 endif
 ifeq ($(strip $(ODROID)),true)
-        CFLAGS+=-ffast-math -pipe -mcpu=cortex-a9 -mfpu=neon -ftree-vectorize -mfloat-abi=hard -fsingle-precision-constant -mno-unaligned-access -fpermissive
+        CFLAGS+=-ffast-math -pipe -ftree-vectorize -fsingle-precision-constant -mno-unaligned-access -fpermissive
 endif
 
 ifeq ($(strip $(DEBUG)),false)
